@@ -1,5 +1,5 @@
-def sort_list(lst = None):
-    if lst == None:
+def sort_list(lst):
+    if len(lst) == 0:
         return []
     max_value = max(lst)
     min_value = min(lst)
