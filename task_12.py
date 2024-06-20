@@ -1,5 +1,4 @@
 class Dessert:
-
     def __init__(self, name = None, calories = None):
         self.__name = name
         self.__calories = calories
@@ -16,12 +15,10 @@ class Dessert:
         return self.__calories
     @calories.setter
     def calories(self, calories):
-        if calories is not None and calories < 0:
-            raise ValueError('Калорийность не может быть отрицательной')
         self.__calories = calories
 
     def is_healthy(self):
-        return self.__calories is not None and self.__calories < 200
+        return isinstance(self.__calories, (int, float)) and self.__calories < 200
 
 
     def is_delicious(self):
@@ -29,7 +26,7 @@ class Dessert:
 
 class JellyBean(Dessert):
 
-    def __init__(self, name = None, calories = 0, flavor = None):
+    def __init__(self, name = None, calories = None, flavor = None):
         super().__init__(name, calories)
         self.__flavor = flavor
 
